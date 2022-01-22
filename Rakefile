@@ -1,5 +1,5 @@
 
-task :default do
+task TOP => [:default] do
 
   target = SITE_DIR + 'refact/'
 
