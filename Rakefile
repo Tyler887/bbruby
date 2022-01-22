@@ -1,3 +1,3 @@
-task :clean_cache do
-  rm_r FileList["tmp/cache/*"]
-end
+
+rm_r FileList["tmp/cache/*"]
+
