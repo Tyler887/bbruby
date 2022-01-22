@@ -1,3 +1,3 @@
-gem 'kramdown'
+gem 'markdown'
 gem "jekyll"
 
