@@ -15,19 +15,29 @@ on:
 
 jobs:
   test:
-    name: Ruby ${{ matrix.ruby-version }} Tests on Ubuntu ${{ matrix.ubuntu }} (checkout v${{ matrix.checkout-version }})
-    runs-on: ubuntu-${{ matrix.ubuntu }}
+    name: Ruby ${{ matrix.ruby-version }} Tests on Ubuntu ${{ matrix.ubuntu }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         ruby-version: ['2.4', '2.5', '2.6', '2.7', '3.0']
-        ubuntu: ['18.04', '20.04']
-        checkout-version: ['1', '2']
     steps:
-    - uses: actions/checkout@v${{ matrix.checkout-version }}
+    - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run tests
-      run: rake
+      run: rakerake
+  publish:
+     name: Publish gem
+     runs-on: ubuntu
+     steps:
+       - uses: dawidd6/action-publish-gem@c4713bf1595e0686322d6cf6c1a1c0dcaeca55de
+         with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+     
+     
+
+
+     
