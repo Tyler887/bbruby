@@ -1,5 +1,5 @@
 # bbruby
-forum framework with ruby on rails
+forum framework with ruby
 ***
 Forums are simple communication websites. You could go with gh discussions. BBRuby is written
-in Ruby on Rails.
+in Ruby. Yeah. Simple.
