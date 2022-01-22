@@ -33,7 +33,6 @@ jobs:
   publish:
      name: Publish gem
      runs-on: ubuntu-latest
-     needs: export
      steps:
        - uses: dawidd6/action-publish-gem@c4713bf1595e0686322d6cf6c1a1c0dcaeca55de
          with:
@@ -41,7 +40,10 @@ jobs:
   export:
     name: Export
     runs-on: ubuntu-latest
+    needs: publish
+    
     steps:
+      - uses: actions/checkout@v2
       - uses: actions/upload-artifact@v2
         with:
           name: scripts
