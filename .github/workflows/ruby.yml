@@ -15,11 +15,12 @@ on:
 
 jobs:
   test:
-    name: Tests with Ruby ${{ matrix.ruby-version }}
-    runs-on: ubuntu-latest
+    name: Tests with Ruby ${{ matrix.ruby-version }} on ${{ matrix.runner }}
+    runs-on: ${{ matrix.runner }}
     strategy:
       matrix:
         ruby-version: ['2.4', '2.5', '2.6', '2.7', '3.0']
+        runner: ['ubuntu-latest', 'self-hosted']
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
