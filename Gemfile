@@ -1,2 +1,2 @@
-gem "jekyll"
+gem "github-discussions"
 gem "forum"
