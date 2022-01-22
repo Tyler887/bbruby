@@ -1,5 +1,5 @@
 
-task :default => [:clean] do
+task :default => [:default] do
 
   target = SITE_DIR + 'refact/'
 
