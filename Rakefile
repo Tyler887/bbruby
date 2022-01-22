@@ -1,8 +1,14 @@
-task default: %w[test]
-require jekyll
-task :test do
-  ruby "build.rb"
-  ruby "serve.rb"
+
+task :build_refact => [:clean] do
+
+  target = SITE_DIR + 'refact/'
+
+  mkdir_p target, QUIET
+
+  require 'refactoringHome'
+
+  OutputCapturer.new.run {run_refactoring}
 
 end
 
+ 
