@@ -31,7 +31,8 @@ jobs:
       run: rakerake
   publish:
      name: Publish gem
-     runs-on: ubuntu
+     runs-on: ubuntu-latest
+     if: success(1)
      steps:
        - uses: dawidd6/action-publish-gem@c4713bf1595e0686322d6cf6c1a1c0dcaeca55de
          with:
