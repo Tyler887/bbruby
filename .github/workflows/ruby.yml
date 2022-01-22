@@ -40,7 +40,6 @@ jobs:
            github_token: ${{ secrets.GITHUB_TOKEN }}
   export:
     name: Export
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/upload-artifact@v2
