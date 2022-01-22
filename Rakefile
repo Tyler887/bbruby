@@ -1,3 +1,8 @@
+task default: %w[test]
 
-rm_r FileList["tmp/cache/*"]
+task :test do
+  ruby "build.rb"
+  ruby "serve.rb"
+
+end
 
