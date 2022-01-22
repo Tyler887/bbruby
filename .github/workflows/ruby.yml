@@ -28,11 +28,12 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run tests
-      run: rakerake
+      run: rake
+...
   publish:
      name: Publish gem
      runs-on: ubuntu-latest
-     if: success(1)
+
      steps:
        - uses: dawidd6/action-publish-gem@c4713bf1595e0686322d6cf6c1a1c0dcaeca55de
          with:
