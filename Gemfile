@@ -1,3 +1,3 @@
-gem "discuss"
+gem "bbcode"
 gem "jekyll"
-gem "licensee"
+
